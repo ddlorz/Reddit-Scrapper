@@ -1,0 +1,44 @@
+{
+  "name": "forces-scraper",
+  "version": "1.0.0",
+  "description": "Cheerios and Mongo App",
+  "main": "./public/index.html",
+  "scripts": {
+    "start": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/djrloria/Forbes-Scraper.git"
+  },
+  "keywords": [
+    "cheerio",
+    "mongodb",
+    "mongoose",
+    "react"
+  ],
+  "author": "domingo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/djrloria/Forbes-Scraper/issues"
+  },
+  "homepage": "https://github.com/djrloria/Forbes-Scraper#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "cheerio": "^1.0.0-rc.2",
+    "express": "^4.15.3",
+    "lodash": "^4.17.4",
+    "mongoose": "^4.11.3",
+    "path": "^0.12.7",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "request": "^2.81.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.3.13",
+    "babel-loader": "^6.2.0",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "webpack": "^1.13.1"
+  }
+}
