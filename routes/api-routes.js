@@ -1,33 +1,48 @@
 const cheerio = require('cheerio');
 const _ = require('lodash');
 const request = require('request');
+const mongojs = require('mongojs');
+const mongoose = require('mongoose');
+const Archive = require('../models/Archive');
+const Comment = require('../models/Comment');
 
 module.exports = function(app) {
-    app.post('/', function(req, res) {
-        request('https://www.reddit.com/r/worldnews/', function(error, response, html) {
-            var $ = cheerio.load(html);
-            var articles = [];
-            var authors = [];
+    app.post('/api/save', function(req, res) {
+        var headlines = req.session.headlines;
+        headlines.forEach(function(headline) {
+            if (headline.uuid === req.body.uuid) {
+                console.log(headline.uuid);
+                var entry = new Archive(headline);
 
-            $('p.tagline').each(function(i, element) {
-                authors.push({
-                    author: $(element).children('a').text(),
-                    time: $(element).children('time').text(),
+                entry.save(function(err, doc) {
+                    if (err) console.log(err);
+                    else console.log(doc);
                 });
-            });
-
-            $('a.title').each(function(i, element) {
-                var title = $(element).text();
-                var link  = $(element).attr("href");
-
-                articles.push({
-                    title: title,
-                    link: link
-                });
-            });
-            var headlines = _.merge(articles, authors);   
-            //console.log(headlines);
-            res.send({headlines}); 
+            }            
         });
-    });    
+        res.end();
+    });
+
+    app.post('/api/add_comment', function(req, res) {
+        var entry = new Comment(req.body);
+        entry.save(function(err, doc) {
+            if (err) console.log(err);
+            else console.log(doc);
+        });
+    });
+
+    app.post('/api/show_comment', function(req, res) {
+        Comment.find({'uuid': req.body.uuid}, function(error, doc) {
+            //console.log(doc);
+            if (error) console.log(error);
+            else res.send(doc);
+        });
+    });
+
+    app.post('/api/delete', function(req, res) {
+        Comment.findByIdAndRemove({'_id':req.body.id}, function(error, doc) {
+            if (error) console.log(error);
+            else res.end();
+        });
+    });
 }

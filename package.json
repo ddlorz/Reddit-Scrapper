@@ -14,8 +14,7 @@
   "keywords": [
     "cheerio",
     "mongodb",
-    "mongoose",
-    "react"
+    "mongoose"
   ],
   "author": "domingo",
   "license": "ISC",
@@ -27,18 +26,13 @@
     "body-parser": "^1.17.2",
     "cheerio": "^1.0.0-rc.2",
     "express": "^4.15.3",
+    "express-handlebars": "^3.0.0",
+    "express-session": "^1.15.4",
     "lodash": "^4.17.4",
+    "mongojs": "^2.4.0",
     "mongoose": "^4.11.3",
     "path": "^0.12.7",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
-    "request": "^2.81.0"
-  },
-  "devDependencies": {
-    "babel-core": "^6.3.13",
-    "babel-loader": "^6.2.0",
-    "babel-preset-es2015": "^6.3.13",
-    "babel-preset-react": "^6.3.13",
-    "webpack": "^1.13.1"
+    "request": "^2.81.0",
+    "uuid": "^3.1.0"
   }
 }
