@@ -2,7 +2,7 @@
   "name": "forces-scraper",
   "version": "1.0.0",
   "description": "Cheerios and Mongo App",
-  "main": "./public/index.html",
+  "main": "server.js",
   "scripts": {
     "start": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
