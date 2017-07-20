@@ -1,10 +1,9 @@
 {
-  "name": "forces-scraper",
+  "name": "reddit-scraper",
   "version": "1.0.0",
   "description": "Cheerios and Mongo App",
   "main": "server.js",
   "scripts": {
-    "start": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
