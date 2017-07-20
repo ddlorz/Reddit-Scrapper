@@ -1,8 +1,7 @@
 const cheerio = require('cheerio');
-const _ = require('lodash');
 const request = require('request');
+const _ = require('lodash');
 const uuid = require('uuid');
-const mongojs = require('mongojs');
 const Archive = require('../models/Archive');
 const Comment = require('../models/Comment');
 

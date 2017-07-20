@@ -1,8 +1,3 @@
-const cheerio = require('cheerio');
-const _ = require('lodash');
-const request = require('request');
-const mongojs = require('mongojs');
-const mongoose = require('mongoose');
 const Archive = require('../models/Archive');
 const Comment = require('../models/Comment');
 
