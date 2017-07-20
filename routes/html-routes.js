@@ -39,8 +39,8 @@ module.exports = function(app) {
     });    
 
     app.get('/archive', function(req, res) {
+        res.render('archive', {});
         Archive.find({}, function(error, doc) {
-            //console.log(doc);
             if (error) console.log(error);
             else res.render('archive', {doc});
         });

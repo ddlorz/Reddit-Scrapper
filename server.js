@@ -19,7 +19,7 @@ app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 
 mongoose.Promise = Promise;
-mongoose.connect('mongodb://localhost/worldnews' || 'mongodb://heroku_ztjfjzcx:a74vo0na64igv4j0cg5e773orj@ds127391.mlab.com:27391/heroku_ztjfjzcx')
+mongoose.connect('mongodb://heroku_ztjfjzcx:a74vo0na64igv4j0cg5e773orj@ds127391.mlab.com:27391/heroku_ztjfjzcx')
 var db = mongoose.connection;
 
 db.on('error', function(error) {
